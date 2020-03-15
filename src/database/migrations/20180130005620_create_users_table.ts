@@ -1,0 +1,29 @@
+import * as Knex from 'knex';
+
+import Table from '../../resources/enums/Table';
+
+export function up(knex: Knex): Promise<any> {
+  return knex.schema.createTable(Table.USERS, table => {
+    table.increments('id').primary();
+    table.string('name').notNullable();
+    table.text('image').nullable();
+    table.string('display_name',255).unique().notNullable();
+    table
+      .string('email')
+      .notNullable()
+      .unique();
+    table.string('password').notNullable();
+    table
+      .integer('role_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable(Table.USER_ROLES);
+
+    table.timestamps(true, true);
+  });
+}
+
+export function down(knex: Knex) {
+  return knex.schema.dropTable(Table.USERS);
+}

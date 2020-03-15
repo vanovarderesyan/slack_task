@@ -1,0 +1,40 @@
+{
+  "auth": {
+    "loginSuccess": "Login successful.",
+    "logoutSuccess": "Logout successful.",
+    "invalidCredentials": "Invalid Credentials",
+    "accessTokenRefreshed": "Access token refreshed successfully."
+  },
+  "users": {
+    "insert": "User inserted successfully.",
+    "fetch": "User detail fetched successfully.",
+    "delete": "User removed successfully.",
+    "fetchAll": "List of users.",
+    "edit" : "User channel successfully"
+
+  },
+  "workspace":{
+    "insert": "workspace inserted successfully.",
+    "fetch": "workspace detail fetched successfully.",
+    "delete": "workspace removed successfully.",
+    "fetchAll": "List of workspace.",
+    "count"  :" count workspace",
+    "edit" : "edit workspace successfully"
+  },
+  "channel" : {
+    "insert": "channel inserted successfully.",
+    "fetch": "channel detail fetched successfully.",
+    "delete": "channel removed successfully.",
+    "fetchAll": "List of channel.",
+    "count"  :" count channel",
+    "edit" : "edit channel successfully"
+  },
+  "workspaceUser" : {
+    "insert": "workspaceUser inserted successfully.",
+    "fetch": "workspaceUser detail fetched successfully.",
+    "delete": "workspaceUser removed successfully.",
+    "fetchAll": "List of workspaceUser.",
+    "count"  :" count workspaceUser",
+    "edit" : "edit workspaceUser successfully"
+  }
+}
