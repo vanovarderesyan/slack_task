@@ -66,3 +66,13 @@ export async function update(id: number, params: UserPayload): Promise<UserDetai
 
   return object.camelize(user);
 }
+
+export async function setImage(id: number, image: any): Promise<UserDetail> {
+
+  const user = (
+      await new User().where({ id: id }).save({ image : image.filename }, { patch: true })
+  ).serialize();
+
+  return object.camelize(user);
+}
+

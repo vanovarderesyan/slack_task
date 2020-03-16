@@ -10,7 +10,7 @@
     "fetch": "User detail fetched successfully.",
     "delete": "User removed successfully.",
     "fetchAll": "List of users.",
-    "edit" : "User channel successfully"
+    "edit" : "edit user successfully"
 
   },
   "workspace":{

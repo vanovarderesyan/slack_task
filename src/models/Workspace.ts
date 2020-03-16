@@ -3,6 +3,7 @@ import bookshelf from '../config/bookshelf';
 import Table from '../resources/enums/Table';
 import User from './User'
 import Channel from './Channel'
+
 import { Collection } from 'bookshelf';
 
 
@@ -28,6 +29,8 @@ class Workspace extends bookshelf.Model<Workspace> {
   channels():Collection<Channel>{
       return this.hasMany(Channel)
   }
+
+
 }
 
 export default Workspace;

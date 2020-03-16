@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "5d8edbb8-dec6-457d-bd16-2fb06df7ef85",
+		"name": "slack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Vano\",\n\t\"password\" : \"12345678\",\n\t\"email\" : \"vano.varderesyann@mail.ru\",\n\t\"displayName\" : \"vanovarderesyanp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"vano.varderesyan94@gmail.com\",\n\t\"password\" : \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6Mn0sImlhdCI6MTU4NDI2NDIzOCwiZXhwIjoxNTg0MjY0ODM4fQ.CBosxN3Rwepxj7rQFWnm06g5nOwaFTywVG86oXmxPC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"my workspace 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/workspace/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspaces get all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6M30sImlhdCI6MTU4NDI2NTAyNSwiZXhwIjoxNTg0MjY1NjI1fQ.pCKA7CD_0e8ikyYPJFp8Oc8AtDzheOcecIKnT8iiT6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/workspaces/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspaces",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace get one",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6MTB9LCJpYXQiOjE1ODQyODk3MDYsImV4cCI6MTU4NDI5MDMwNn0.Df-c6wN46t14hWev9KssmigRrz_yHuI6QEo-Zx6_OUU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/workspace/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6NH0sImlhdCI6MTU4NDI2NTUwNCwiZXhwIjoxNTg0MjY2MTA0fQ.P9GGnae_4QnwnH-dSkHdzVcvkFdWfabWoNNHy3czVs8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"edit\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/workspace/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6NH0sImlhdCI6MTU4NDI2NTUwNCwiZXhwIjoxNTg0MjY2MTA0fQ.P9GGnae_4QnwnH-dSkHdzVcvkFdWfabWoNNHy3czVs8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/workspace/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "channel create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6NX0sImlhdCI6MTU4NDI4Nzk1MSwiZXhwIjoxNTg0Mjg4NTUxfQ.IbFM4FCJOx5CyRDvu71pEVjHTQitZIV6bOlOSaFXyqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"channel1\",\n\t\"workspaceId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/channel/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"channel",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "channels get {1}=workspaceId ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJzc3MiLCJlbWFpbCI6InZhbm8udmFyZGVyZXN5YW45NEBnbWFpbC5jb20iLCJ1c2VySWQiOjMsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxNH0sImlhdCI6MTU4NDI5MzExNywiZXhwIjoxNTg0MjkzNzE3fQ.Cq7TM5YwXEzmdm3LW1qFSoga0iOJZbwQjnue91WiWvI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/channels/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"channels",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "channel {1} channelId update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6OH0sImlhdCI6MTU4NDI4ODg1NCwiZXhwIjoxNTg0Mjg5NDU0fQ.nEbJoTqmxuyIFZf-xME7aOOjbemUdo_cDtLdnOZwiOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"channel edit\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/channel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"channel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "channel delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuOTRAZ21haWwuY29tIiwidXNlcklkIjozLCJyb2xlSWQiOjIsInNlc3Npb25JZCI6MTB9LCJpYXQiOjE1ODQyODk3MDYsImV4cCI6MTU4NDI5MDMwNn0.Df-c6wN46t14hWev9KssmigRrz_yHuI6QEo-Zx6_OUU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/channel/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"channel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user Update profile by setting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJzc3MiLCJlbWFpbCI6InZhbm8udmFyZGVyZXN5YW45NEBnbWFpbC5jb20iLCJ1c2VySWQiOjMsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxNH0sImlhdCI6MTU4NDI5MzExNywiZXhwIjoxNTg0MjkzNzE3fQ.Cq7TM5YwXEzmdm3LW1qFSoga0iOJZbwQjnue91WiWvI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"sss\",\n\t\"email\":  \"vano.varderesyan94@gmail.com\",\n\t\"displayName\" : \"vanovarderesyanp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/setting",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJzc3MiLCJlbWFpbCI6InZhbm8udmFyZGVyZXN5YW45NEBnbWFpbC5jb20iLCJ1c2VySWQiOjMsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxNX0sImlhdCI6MTU4NDMwMDA0OSwiZXhwIjoxNTg0MzAwNjQ5fQ.pKSCVyLLOKIFvnlNFl74gOIuXIn-7IRPrbv0jTE-2Us",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invite user to the workspace.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJzc3MiLCJlbWFpbCI6InZhbm8udmFyZGVyZXN5YW45NEBnbWFpbC5jb20iLCJ1c2VySWQiOjMsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxNX0sImlhdCI6MTU4NDMwMDA0OSwiZXhwIjoxNTg0MzAwNjQ5fQ.pKSCVyLLOKIFvnlNFl74gOIuXIn-7IRPrbv0jTE-2Us",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"inviteId\" : 4,\n\t\"workspaceId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/workspace-user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace-invited list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuQG1haWwucnUiLCJ1c2VySWQiOjQsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxN30sImlhdCI6MTU4NDMwMTMyMSwiZXhwIjoxNTg0MzAxOTIxfQ.yNhWzFOFnu0_3M2cCv4GuelS3KKhtnl7fV4c9ka0OVE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/workspace-invited/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace-invited",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspace-invited accepted ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuQG1haWwucnUiLCJ1c2VySWQiOjQsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxOH0sImlhdCI6MTU4NDMwMTYwMywiZXhwIjoxNTg0MzAyMjAzfQ.luo6VvFrxj59hfTXOOlhdkI577-DK3dIukaq37dmQAI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/workspace-invited/accepted/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"workspace-invited",
+						"accepted",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "my workspace list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuQG1haWwucnUiLCJ1c2VySWQiOjQsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoxOX0sImlhdCI6MTU4NDMwMjAzOCwiZXhwIjoxNTg0MzAyNjM4fQ.Y11pWa7zFUWHmvkHuRVzdsvRiqFv8_-Ll_efMsSym88",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/my/workspace/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"my",
+						"workspace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set image profil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJWYW5vIiwiZW1haWwiOiJ2YW5vLnZhcmRlcmVzeWFuQG1haWwucnUiLCJ1c2VySWQiOjQsInJvbGVJZCI6Miwic2Vzc2lvbklkIjoyNX0sImlhdCI6MTU4NDM0MDQ5OSwiZXhwIjoxNTg0MzQxMDk5fQ.U2a3iN-XR6iDuHZQtNSpzQGFlV7VrbqWCTjrlfWshpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/vano/Downloads/download.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/profile/image",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

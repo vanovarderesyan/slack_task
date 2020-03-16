@@ -55,18 +55,40 @@ export async function store(req: Request, res: Response, next: NextFunction) {
 export async function update(req: Request, res: Response, next: NextFunction): Promise<void> {
 
   try {
-    const {userId} = res.locals.loggedInPayload;
+    const { userId } = res.locals.loggedInPayload;
     const workspacePayload = req.body as UserPayload;
 
-      const response = (await userService.update(userId,workspacePayload));
+    const response = (await userService.update(userId, workspacePayload));
 
-      res.status(HttpStatus.OK).json({
-          code: HttpStatus.OK,
-          data: response,
-          message: messages.users.edit
-      })
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: response,
+      message: messages.users.edit
+    })
 
   } catch (error) {
-      next(error);
+    next(error);
   }
 }
+
+export async function setImage(req: Request, res: Response, next: NextFunction): Promise<void> {
+
+  try {
+    const { userId } = res.locals.loggedInPayload;
+    const file = req.file;
+
+
+    const response = (await userService.setImage(userId, file));
+
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: response,
+      message: messages.users.edit
+    })
+
+  } catch (error) {
+    next(error);
+  }
+}
+
+

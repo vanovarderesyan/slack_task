@@ -21,7 +21,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/static/',express.static(__dirname + './uploads'));
+
 app.use('/', routes);
+
 
 app.use(genericErrorHandler);
 app.use(notFoundHandler);

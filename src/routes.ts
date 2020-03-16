@@ -22,7 +22,10 @@ import { channelPOSTSchema,channelPUTchema } from './validators/channelRequest';
 import * as workspaceUserController from './controllers/workspaceUser';
 import { workspaceUserPOSTSchema } from './validators/workspaceUserRequest';
 
+import upload from './utils/upload';
+
 const router: Router = Router();
+router.use(upload.single('image'));
 
 router.get('/', homeController.index);
 
@@ -34,12 +37,11 @@ router.post('/users', validate.schema(userPOSTSchema), userController.store);
 router.use(authenticate);
 router.get('/users', userController.index);
 router.put('/user/setting', validate.schema(userPUTchema),userController.update);
-// router.put('/user/profile',)
+router.post('/user/profile/image', upload.single('iamge'),userController.setImage);
 
 
 //workspace
 router.get('/workspaces/',workspaceController.index)
-
 router.get('/workspaces/count', workspaceController.count);
 router.post('/workspace', validate.schema(workspacePOSTSchema), workspaceController.store);
 router.route('/workspace/:id')
